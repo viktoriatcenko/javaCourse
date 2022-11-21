@@ -3,6 +3,8 @@ package lesson_08.models;
 import lesson_08.interfaces.Card;
 import lesson_08.interfaces.DeckOfCards;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class DeckOfCardsImpl implements DeckOfCards {
     // fields
     Card [] cards = new Card[52];
@@ -10,7 +12,7 @@ public class DeckOfCardsImpl implements DeckOfCards {
 
     //constructor
 
-    public DeckOfCardsImpl(Card[] cards) {
+    public DeckOfCardsImpl() {
         cards[0] = new CardImpl("Двойка Трефа", 2);
         cards[1] = new CardImpl("Двойка Черви", 2);
         cards[2] = new CardImpl("Двойка Бубны", 2);
@@ -56,20 +58,20 @@ public class DeckOfCardsImpl implements DeckOfCards {
         cards[34] = new CardImpl("Десятка Бубны", 10);
         cards[35] = new CardImpl("Десятка Пики", 10);
 
-        cards[36] = new CardImpl("Валет Трефа", 2);
-        cards[37] = new CardImpl("Валет Черви", 2);
-        cards[38] = new CardImpl("Валет Бубны", 2);
-        cards[39] = new CardImpl("Валет Пики", 2);
+        cards[36] = new CardImpl("Валет Трефа", 10);
+        cards[37] = new CardImpl("Валет Черви", 10);
+        cards[38] = new CardImpl("Валет Бубны", 10);
+        cards[39] = new CardImpl("Валет Пики", 10);
 
-        cards[40] = new CardImpl("Дама Трефа", 3);
-        cards[41] = new CardImpl("Дама Черви", 3);
-        cards[42] = new CardImpl("Дама Бубны", 3);
-        cards[43] = new CardImpl("Дама Пики", 3);
+        cards[40] = new CardImpl("Дама Трефа", 10);
+        cards[41] = new CardImpl("Дама Черви", 10);
+        cards[42] = new CardImpl("Дама Бубны", 10);
+        cards[43] = new CardImpl("Дама Пики", 10);
 
-        cards[44] = new CardImpl("Король Трефа", 4);
-        cards[45] = new CardImpl("Король Черви", 4);
-        cards[46] = new CardImpl("Король Бубны", 4);
-        cards[47] = new CardImpl("Король Пики", 4);
+        cards[44] = new CardImpl("Король Трефа", 10);
+        cards[45] = new CardImpl("Король Черви", 10);
+        cards[46] = new CardImpl("Король Бубны", 10);
+        cards[47] = new CardImpl("Король Пики", 10);
 
         cards[48] = new CardImpl("Туз Трефа", 11);
         cards[49] = new CardImpl("Туз Черви", 11);
@@ -81,6 +83,7 @@ public class DeckOfCardsImpl implements DeckOfCards {
     // methods
     @Override
     public Card randomCards() {
-        return null;
+        int randomIndex = ThreadLocalRandom.current().nextInt(0,51);
+        return cards[randomIndex];
     }
 }
