@@ -5,8 +5,6 @@ public class Main {
         Cat neizv = new Cat();
         Cat barsik = new Cat("Barsik");
         Cat snezhok = new Cat("Snezhok", 7, 8.3,"Ginger");
-
-
         System.out.print(barsik.getName() + " "  + snezhok.getName()
                 + " "
                 + neizv.getName()
